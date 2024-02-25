@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./app/books.js" defer></script>
+    <script src="./app/btns_function.js" defer></script>
+    <title>Agregar Libro</title>
+</head>
+<body>
+    <div class="header">
+        <p>LIBRARY OF Agustin Schmira</p>
+    </div>
+    <button id="showFormBtn">Add Book +</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <!-- Tu formulario irá aquí -->
+            <form id="bookForm">
+                <legend>Book information</legend>
+                
+                <!-- Campos del formulario -->
+                <ul>
+                    <li>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </li>
+
+                    <li>
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                    </li>
+                    <li>
+                        <label for="pages">Amount of pages:</label>
+                        <input type="number" id="pages" name="pages" placeholder="" required>
+                    </li>
+                    <li>
+                        <label for="read">Have you already read it?</label>
+                        <input type="button" id="read" class="no" name="read" value="No" required>
+                    </li>
+
+
+
+                    <li class="btns">
+                        <button type="submit">Agregar Libro</button>
+                        <button type="button" id="hideFormBtn"> Cancelar</button>
+                    </li>
+
+                </ul>
+
+                
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
