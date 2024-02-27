@@ -21,7 +21,35 @@ document.getElementById('showFormBtn').addEventListener('click', function () {
         modalContent.classList.add('show');
     }, 50);
 });
+
+document.getElementById("isRead").addEventListener('click', () =>{
+    var btnValue = document.getElementById("isRead")
+
+    if (btnValue.className == 'yes'){
+        btnValue.classList.replace('yes', "no")
+        btnValue.value = "NO"
+    } 
+    else if (btnValue.className == 'no'){
+        btnValue.classList.replace("no", 'yes' )
+        btnValue.value = "YES"
+    }
+})
 //----------------------------------------------------------------------------------------------
 
 
 //----------------------Read it? btn--------------------------------------------
+function toggleRead(event) {
+    var btnValue = document.getElementById("bRead")
+    if (event.target.id === "bRead"){
+        var btnValue = event.target
+        if (btnValue.className == 'yes'){
+            btnValue.classList.replace('yes', "no")
+            btnValue.textContent= "Not Read"
+        } 
+        else if (btnValue.className == 'no'){
+            btnValue.classList.replace("no", 'yes' )
+            btnValue.textContent = "Read"
+        }
+    }
+}
+document.getElementById('library').addEventListener("click", toggleRead);
