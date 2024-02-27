@@ -1,8 +1,5 @@
 //Temporary memory of the books i keep
-var myLibrary = [
-    new Book("Book1", "Author1", 200, false),
-    new Book("Book2", "Author2", 150, true),
-];
+var myLibrary = [];
 
 //book constructor
 function Book(title, author, pages, read){
