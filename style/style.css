@@ -72,8 +72,7 @@ li{
 }
 #showFormBtn{
     background-image: linear-gradient(rgb(255, 255, 246), rgb(209, 209, 178));
-    width: 8em;
-    height: 3em;
+    padding: 15px 1em;
     border: solid 1px black;
     border-radius: 2px;
     align-self: center;
