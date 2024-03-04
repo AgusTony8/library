@@ -1,17 +1,25 @@
 //Temporary memory of the books i keep
-var myLibrary = [];
+class Library{
+    storedBooks = []
+    
+}
 
+const myLibrary = new Library;
+
+//On futhermore inspection, i already used by mistake classes instead of function factory 
 //book constructor
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = () =>{
-        readTxt = read ? " read" : "not read yet";
-        
-        return ("This is the " + title + " made by " + author + ", with "
-                + pages.toString() + " pages and is " +readTxt) 
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.info = () =>{
+            readTxt = read ? " read" : "not read yet";
+            
+            return ("This is the " + title + " made by " + author + ", with "
+                    + pages.toString() + " pages and is " + readTxt) 
+        }
     }
 }
 
@@ -23,16 +31,16 @@ function clearLibrary(){
 
 //web book constructor
 function addBookToLibrary(newBook) {
-    myLibrary.push(newBook);
+    myLibrary.storedBooks.push(newBook);
 
     var container = document.getElementById("library");
     
     //clears the library contents
-    clearLibrary();
+    clearLibrary()
     
     
     // Loop through the myLibrary array
-    myLibrary.forEach(function(book) {
+    myLibrary.storedBooks.forEach(function(book) {
         // Create the div element with class "aBook"
         var my_div = document.createElement("div");
         my_div.classList.add("aBook");
@@ -84,9 +92,9 @@ document.getElementById('bookForm').addEventListener('submit', function (event) 
     var bkAuthor = form.elements.author.value;
     var bkPages = form.elements.pages.value;
     var bkRead = form.elements.isRead.value == 'YES' ? true : false;
-    let newBook = new Book(bkTitle, bkAuthor, bkPages, bkRead)
     
     //calls to add a new book to the library
+    let newBook = new Book(bkTitle, bkAuthor, bkPages, bkRead)
     addBookToLibrary(newBook);
 
     //closes form
